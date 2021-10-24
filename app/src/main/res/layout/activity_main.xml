@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/main_frame_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <ImageView
+                android:id="@+id/left_icon"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_margin="24dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_round_height_24"
+                android:alpha="0.6"/>
+            <com.roxybestgirl.ultimatecarrc.JoystickView
+                android:id="@+id/left_joystick"
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:JV_buttonColor="#9CC3D5"
+                custom:JV_buttonSizeRatio="25%"
+                custom:JV_fixedCenter="false"
+                custom:JV_buttonDirection="vertical"
+                android:background="@drawable/ic_baseline_circle_100"
+                android:alpha="0"
+                tools:alpha="1"/>
+        </FrameLayout>
+
+
+        <!--Divider bar-->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider"
+            android:layout_marginVertical="35dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <ImageView
+                android:id="@+id/right_icon"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_margin="24dp"
+                android:src="@drawable/ic_round_height_24"
+                android:rotation="90"
+                android:alpha="0.6"/>
+            <com.roxybestgirl.ultimatecarrc.JoystickView
+                android:id="@+id/right_joystick"
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                custom:JV_buttonColor="#9CC3D5"
+                custom:JV_buttonSizeRatio="25%"
+                custom:JV_fixedCenter="false"
+                custom:JV_buttonDirection="horizontal"
+                android:background="@drawable/ic_baseline_circle_100"
+                android:alpha="0"
+                tools:alpha="1"/>
+        </FrameLayout>
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/fab_menu_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorOnBackground"
+        android:alpha="0.2"
+        android:visibility="gone"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/setting_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:src="@drawable/ic_baseline_settings_24"
+        android:contentDescription="@string/settings_icon_desc"
+        android:layout_margin="24dp"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/swap_side_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:src="@drawable/ic_round_swap_horiz_24"
+        android:contentDescription="@string/swap_side_btn_desc"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="28dp"
+        android:visibility="gone"
+        app:fabSize="mini"
+        tools:visibility="visible"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/connection_info_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:src="@drawable/ic_round_rss_feed_24"
+        android:contentDescription="@string/connection_info_btn_desc"
+        android:layout_marginEnd="156dp"
+        android:layout_marginTop="28dp"
+        android:visibility="gone"
+        app:fabSize="mini"
+        tools:visibility="visible"/>
+</FrameLayout>
